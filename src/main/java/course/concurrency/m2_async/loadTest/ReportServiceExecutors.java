@@ -44,3 +44,28 @@ public class ReportServiceExecutors {
         executor.shutdown();
     }
 }
+
+
+// 4 ядра
+// блокирующая нагрузка - sleep()
+// newFixedThreadPool(4) - Execution time: 137260
+// newFixedThreadPool(8) - Execution time: 69379
+// newFixedThreadPool(16) - Execution time: 36144
+// newFixedThreadPool(24) - Execution time: 24144
+// newFixedThreadPool(32) - Execution time: 19647
+
+// newCachedThreadPool() - Execution time: 15091
+
+// newSingleThreadExecutor() - Execution time: 300012
+
+
+// вычислительная нагрузка - compute()
+// newFixedThreadPool(4) - Execution time: 9403
+// newFixedThreadPool(8) - Execution time: 9086
+// newFixedThreadPool(16) - Execution time: 9902
+// newFixedThreadPool(24) - Execution time: 9836
+// newFixedThreadPool(32) - Execution time: 9118
+
+// newCachedThreadPool() - Execution time: 10550
+
+// newSingleThreadExecutor() - Execution time: 16142
